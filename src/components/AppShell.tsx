@@ -13,7 +13,7 @@ export function AppShell({ children }: AppShellProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0D1315] text-[#F0F4F5] flex flex-col antialiased selection:bg-[#FF7417] selection:text-[#0D1315]">
+    <div className="min-h-screen bg-[#0B1220] text-[#F1F5F9] flex flex-col antialiased selection:bg-[#818CF8] selection:text-[#0B1220]">
       {/* Sidebar (Desktop fixed + Mobile drawer) */}
       <Sidebar
         collapsed={collapsed}

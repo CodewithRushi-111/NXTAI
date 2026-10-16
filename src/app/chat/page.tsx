@@ -109,38 +109,38 @@ export default function ChatPage() {
   return (
     <div className="flex flex-col lg:flex-row gap-6 min-h-[calc(100vh-140px)] pb-12">
       {/* Left Session Drawer / Column */}
-      <div className="w-full lg:w-[280px] flex-shrink-0 flex flex-col justify-between p-4 bg-[#141D20] border border-[#243034] rounded-xl h-auto lg:h-[calc(100vh-160px)]">
+      <div className="w-full lg:w-[280px] flex-shrink-0 flex flex-col justify-between p-4 bg-[#111C2E] border border-[#263449] rounded-xl h-auto lg:h-[calc(100vh-160px)]">
         <div className="space-y-4">
           <button
             onClick={startNewChat}
-            className="w-full py-2.5 px-4 bg-white text-[#0D1315] hover:bg-neutral-100 rounded-full font-semibold text-xs flex items-center justify-center space-x-2 transition-all shadow-sm"
+            className="w-full py-2.5 px-4 bg-[#818CF8] text-[#0B1220] hover:bg-[#6366F1] rounded-full font-semibold text-xs flex items-center justify-center space-x-2 transition-all shadow-sm"
           >
-            <Plus className="w-4 h-4 text-[#0D1315]" />
+            <Plus className="w-4 h-4 text-[#0B1220]" />
             <span>New chat</span>
           </button>
 
           {!inChat ? (
-            <div className="text-xs text-[#839BA8] px-1 leading-relaxed">
+            <div className="text-xs text-[#94A3B8] px-1 leading-relaxed">
               No chats yet. Start with a prompt, or import a rescued conversation.
             </div>
           ) : (
             <div className="space-y-1">
-              <div className="text-[10px] uppercase font-bold text-[#526673] px-2">Active Session</div>
-              <div className="p-2.5 rounded-lg bg-[#182327] border border-[#FF7417]/30 text-xs text-[#F0F4F5] flex items-center justify-between">
+              <div className="text-[10px] uppercase font-bold text-[#64748B] px-2">Active Session</div>
+              <div className="p-2.5 rounded-lg bg-[#172338] border border-[#818CF8]/30 text-xs text-[#F1F5F9] flex items-center justify-between">
                 <span className="truncate">Current Conversation</span>
-                <span className="text-[10px] text-[#FF7417]">Live</span>
+                <span className="text-[10px] text-[#818CF8]">Live</span>
               </div>
             </div>
           )}
         </div>
 
         {/* Bottom Drawer Actions */}
-        <div className="space-y-2 pt-4 border-t border-[#243034]">
+        <div className="space-y-2 pt-4 border-t border-[#263449]">
           <button
             onClick={() => setShowRescueModal(true)}
-            className="w-full py-2 px-3 bg-[#182226] hover:bg-[#1E2B30] border border-[#243034] text-[#F0F4F5] rounded-xl text-xs flex items-center justify-center space-x-2 transition-all"
+            className="w-full py-2 px-3 bg-[#172338] hover:bg-[#172338]/80 border border-[#263449] text-[#F1F5F9] rounded-xl text-xs flex items-center justify-center space-x-2 transition-all"
           >
-            <LifeBuoy className="w-3.5 h-3.5 text-[#839BA8]" />
+            <LifeBuoy className="w-3.5 h-3.5 text-[#94A3B8]" />
             <span>Rescue a past chat</span>
           </button>
           <button
@@ -149,28 +149,28 @@ export default function ChatPage() {
               handleRescueParse();
               setShowRescueModal(true);
             }}
-            className="w-full py-2 px-3 bg-[#182226] hover:bg-[#1E2B30] border border-[#243034] text-[#839BA8] hover:text-[#F0F4F5] rounded-xl text-xs flex items-center justify-center space-x-2 transition-all"
+            className="w-full py-2 px-3 bg-[#172338] hover:bg-[#172338]/80 border border-[#263449] text-[#94A3B8] hover:text-[#F1F5F9] rounded-xl text-xs flex items-center justify-center space-x-2 transition-all"
           >
-            <Download className="w-3.5 h-3.5 text-[#839BA8]" />
+            <Download className="w-3.5 h-3.5 text-[#94A3B8]" />
             <span>Import last rescue</span>
           </button>
         </div>
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col bg-[#141D20] border border-[#243034] rounded-xl overflow-hidden min-h-[500px]">
+      <div className="flex-1 flex flex-col bg-[#111C2E] border border-[#263449] rounded-xl overflow-hidden min-h-[500px]">
         {!inChat ? (
           /* Empty State Screen 03 */
           <div className="flex-1 flex flex-col items-center justify-center p-8 text-center max-w-xl mx-auto space-y-6">
-            <div className="w-14 h-14 rounded-2xl bg-[#182226] border border-[#243034] flex items-center justify-center text-[#839BA8]">
-              <Bot className="w-7 h-7 text-[#839BA8]" />
+            <div className="w-14 h-14 rounded-2xl bg-[#172338] border border-[#263449] flex items-center justify-center text-[#94A3B8]">
+              <Bot className="w-7 h-7 text-[#818CF8]" />
             </div>
 
             <div className="space-y-2">
-              <h2 className="text-2xl font-bold text-[#F0F4F5] tracking-tight">
+              <h2 className="text-2xl font-bold text-[#F1F5F9] tracking-tight">
                 Continue any chat, on any AI
               </h2>
-              <p className="text-xs text-[#839BA8] leading-relaxed max-w-md mx-auto">
+              <p className="text-xs text-[#94A3B8] leading-relaxed max-w-md mx-auto">
                 Pick a model per message — or let NXT AI auto-switch when a key runs out. Your thread and context never get lost.
               </p>
             </div>
@@ -179,16 +179,16 @@ export default function ChatPage() {
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
               <button
                 onClick={startNewChat}
-                className="py-2 px-5 bg-white text-[#0D1315] hover:bg-neutral-100 rounded-full font-semibold text-xs flex items-center space-x-2 transition-all shadow-sm"
+                className="py-2 px-5 bg-[#818CF8] text-[#0B1220] hover:bg-[#6366F1] rounded-full font-semibold text-xs flex items-center space-x-2 transition-all shadow-sm"
               >
-                <Plus className="w-3.5 h-3.5 text-[#0D1315]" />
+                <Plus className="w-3.5 h-3.5 text-[#0B1220]" />
                 <span>New chat</span>
               </button>
               <button
                 onClick={() => setShowRescueModal(true)}
-                className="py-2 px-4 bg-[#182226] hover:bg-[#1E2B30] border border-[#243034] text-[#F0F4F5] rounded-full text-xs flex items-center space-x-2 transition-all"
+                className="py-2 px-4 bg-[#172338] hover:bg-[#172338]/80 border border-[#263449] text-[#F1F5F9] rounded-full text-xs flex items-center space-x-2 transition-all"
               >
-                <LifeBuoy className="w-3.5 h-3.5 text-[#839BA8]" />
+                <LifeBuoy className="w-3.5 h-3.5 text-[#94A3B8]" />
                 <span>Rescue a past chat</span>
               </button>
               <button
@@ -197,16 +197,16 @@ export default function ChatPage() {
                   handleRescueParse();
                   setShowRescueModal(true);
                 }}
-                className="py-2 px-4 bg-[#182226] hover:bg-[#1E2B30] border border-[#243034] text-[#F0F4F5] rounded-full text-xs flex items-center space-x-2 transition-all"
+                className="py-2 px-4 bg-[#172338] hover:bg-[#172338]/80 border border-[#263449] text-[#F1F5F9] rounded-full text-xs flex items-center space-x-2 transition-all"
               >
-                <Download className="w-3.5 h-3.5 text-[#839BA8]" />
+                <Download className="w-3.5 h-3.5 text-[#94A3B8]" />
                 <span>Import from my rescue</span>
               </button>
             </div>
 
-            <p className="text-[11px] text-[#526673] pt-6 max-w-lg leading-relaxed">
+            <p className="text-[11px] text-[#64748B] pt-6 max-w-lg leading-relaxed">
               Rescue brings a dead conversation back to life — a report loads it straight into a new thread here.{' '}
-              <kbd className="px-1.5 py-0.5 rounded bg-[#182226] border border-[#243034] text-[#FF7417] text-[10px] font-mono">
+              <kbd className="px-1.5 py-0.5 rounded bg-[#172338] border border-[#263449] text-[#818CF8] text-[10px] font-mono">
                 ⌘I
               </kbd>{' '}
               improves any prompt before it runs.
@@ -216,13 +216,13 @@ export default function ChatPage() {
           /* Active Chat Thread */
           <div className="flex-1 flex flex-col h-full">
             {/* Thread Header with Model Selector */}
-            <div className="px-5 py-3.5 border-b border-[#243034] bg-[#101719] flex items-center justify-between">
+            <div className="px-5 py-3.5 border-b border-[#263449] bg-[#0F172A] flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <span className="text-xs font-semibold text-[#F0F4F5]">Model:</span>
+                <span className="text-xs font-semibold text-[#F1F5F9]">Model:</span>
                 <select
                   value={selectedModel}
                   onChange={(e) => setSelectedModel(e.target.value)}
-                  className="bg-[#182226] border border-[#243034] text-[#F0F4F5] text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-[#FF7417]"
+                  className="bg-[#172338] border border-[#263449] text-[#F1F5F9] text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-[#818CF8]"
                 >
                   <option value="GPT-4o mini">GPT-4o mini (Cheap & fast)</option>
                   <option value="GPT-4o">GPT-4o (Flagship)</option>
@@ -231,12 +231,12 @@ export default function ChatPage() {
                 </select>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="text-[11px] px-2 py-0.5 rounded bg-[#FF7417]/10 text-[#FF7417] border border-[#FF7417]/20 font-medium">
+                <span className="text-[11px] px-2 py-0.5 rounded bg-[#818CF8]/10 text-[#818CF8] border border-[#818CF8]/20 font-medium">
                   DEMO FIXTURE
                 </span>
                 <button
                   onClick={() => setInChat(false)}
-                  className="text-xs text-[#839BA8] hover:text-[#F0F4F5] px-2 py-1"
+                  className="text-xs text-[#94A3B8] hover:text-[#F1F5F9] px-2 py-1"
                 >
                   Clear
                 </button>
@@ -252,19 +252,19 @@ export default function ChatPage() {
                     m.role === 'user' ? 'items-end' : 'items-start'
                   }`}
                 >
-                  <div className="flex items-center space-x-2 mb-1 text-[11px] text-[#839BA8]">
+                  <div className="flex items-center space-x-2 mb-1 text-[11px] text-[#94A3B8]">
                     <span>{m.role === 'user' ? 'You' : m.model}</span>
                     <span>·</span>
                     <span>{m.timestamp}</span>
                     {m.isDemo && (
-                      <span className="text-[10px] text-[#FF7417] font-mono">[Demo]</span>
+                      <span className="text-[10px] text-[#818CF8] font-mono">[Demo]</span>
                     )}
                   </div>
                   <div
                     className={`max-w-2xl px-4 py-3 rounded-xl text-xs leading-relaxed whitespace-pre-wrap ${
                       m.role === 'user'
-                        ? 'bg-[#FF7417] text-[#0D1315] font-medium'
-                        : 'bg-[#182226] border border-[#243034] text-[#F0F4F5]'
+                        ? 'bg-[#818CF8] text-[#0B1220] font-medium'
+                        : 'bg-[#172338] border border-[#263449] text-[#F1F5F9]'
                     }`}
                   >
                     {m.content}
@@ -274,27 +274,27 @@ export default function ChatPage() {
             </div>
 
             {/* Composer */}
-            <div className="p-4 border-t border-[#243034] bg-[#101719]">
+            <div className="p-4 border-t border-[#263449] bg-[#0F172A]">
               <form onSubmit={handleSend} className="relative flex items-center">
                 <input
                   type="text"
                   value={inputVal}
                   onChange={(e) => setInputVal(e.target.value)}
                   placeholder="Send a prompt to test simulated reply..."
-                  className="w-full bg-[#141D20] border border-[#243034] rounded-xl pl-4 pr-24 py-3 text-xs text-[#F0F4F5] placeholder-[#526673] focus:outline-none focus:border-[#FF7417]"
+                  className="w-full bg-[#111C2E] border border-[#263449] rounded-xl pl-4 pr-24 py-3 text-xs text-[#F1F5F9] placeholder-[#64748B] focus:outline-none focus:border-[#818CF8]"
                 />
                 <div className="absolute right-2 flex items-center space-x-1">
                   <button
                     type="button"
                     onClick={() => setInputVal((prev) => (prev ? `Improve: ${prev}` : 'Explain the system architecture'))}
-                    className="px-2 py-1 text-[10px] font-mono text-[#FF7417] bg-[#182226] rounded border border-[#243034] hover:border-[#FF7417]"
+                    className="px-2 py-1 text-[10px] font-mono text-[#818CF8] bg-[#172338] rounded border border-[#263449] hover:border-[#818CF8]"
                     title="Improve Prompt (⌘I)"
                   >
                     ⌘I
                   </button>
                   <button
                     type="submit"
-                    className="p-1.5 bg-[#FF7417] text-[#0D1315] rounded-lg hover:bg-[#FF8533] transition-colors"
+                    className="p-1.5 bg-[#818CF8] text-[#0B1220] rounded-lg hover:bg-[#6366F1] transition-colors"
                   >
                     <Send className="w-3.5 h-3.5" />
                   </button>
@@ -312,21 +312,21 @@ export default function ChatPage() {
             className="fixed inset-0 bg-black/75 backdrop-blur-sm"
             onClick={() => setShowRescueModal(false)}
           />
-          <div className="relative w-full max-w-xl bg-[#141D20] border border-[#243034] rounded-2xl shadow-2xl p-6 z-10 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-[#243034]">
+          <div className="relative w-full max-w-xl bg-[#111C2E] border border-[#263449] rounded-2xl shadow-2xl p-6 z-10 space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-[#263449]">
               <div className="flex items-center space-x-2.5">
-                <LifeBuoy className="w-5 h-5 text-[#FF7417]" />
-                <h3 className="text-sm font-bold text-[#F0F4F5]">Chat Rescue — Continue Pack</h3>
+                <LifeBuoy className="w-5 h-5 text-[#818CF8]" />
+                <h3 className="text-sm font-bold text-[#F1F5F9]">Chat Rescue — Continue Pack</h3>
               </div>
               <button
                 onClick={() => setShowRescueModal(false)}
-                className="text-[#839BA8] hover:text-white"
+                className="text-[#94A3B8] hover:text-white"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
-            <p className="text-xs text-[#839BA8] leading-relaxed">
+            <p className="text-xs text-[#94A3B8] leading-relaxed">
               Paste the text from a dead or hit-the-limit chat session. NXT AI locally validates the content and extracts a portable Continue Pack without external model calls.
             </p>
 
@@ -335,20 +335,20 @@ export default function ChatPage() {
               value={rescueInput}
               onChange={(e) => setRescueInput(e.target.value)}
               placeholder="Paste conversation transcript here..."
-              className="w-full bg-[#0E1517] border border-[#243034] rounded-xl p-3 text-xs text-[#F0F4F5] placeholder-[#526673] focus:outline-none focus:border-[#FF7417] font-mono"
+              className="w-full bg-[#0F172A] border border-[#263449] rounded-xl p-3 text-xs text-[#F1F5F9] placeholder-[#64748B] focus:outline-none focus:border-[#818CF8] font-mono"
             />
 
             {rescueParsed && (
-              <div className="p-3 bg-[#182226] border border-[#243034] rounded-xl text-xs space-y-2">
-                <div className="font-semibold text-[#00D26A] flex items-center space-x-1.5">
+              <div className="p-3 bg-[#172338] border border-[#263449] rounded-xl text-xs space-y-2">
+                <div className="font-semibold text-[#34D399] flex items-center space-x-1.5">
                   <FileText className="w-3.5 h-3.5" />
                   <span>Preview Continue Pack</span>
                 </div>
-                <div className="text-[11px] text-[#839BA8]">
-                  <span className="text-[#F0F4F5] font-medium">Summary:</span> {rescueParsed.summary}
+                <div className="text-[11px] text-[#94A3B8]">
+                  <span className="text-[#F1F5F9] font-medium">Summary:</span> {rescueParsed.summary}
                 </div>
-                <div className="text-[11px] text-[#839BA8]">
-                  <span className="text-[#F0F4F5] font-medium">Parsed size:</span> {rescueParsed.sourceLength}
+                <div className="text-[11px] text-[#94A3B8]">
+                  <span className="text-[#F1F5F9] font-medium">Parsed size:</span> {rescueParsed.sourceLength}
                 </div>
               </div>
             )}
@@ -358,7 +358,7 @@ export default function ChatPage() {
                 <button
                   type="button"
                   onClick={handleRescueParse}
-                  className="px-4 py-2 bg-[#FF7417] text-[#0D1315] hover:bg-[#FF8533] rounded-lg font-semibold text-xs transition-all"
+                  className="px-4 py-2 bg-[#818CF8] text-[#0B1220] hover:bg-[#6366F1] rounded-lg font-semibold text-xs transition-all"
                 >
                   Generate Continue Pack
                 </button>
@@ -366,7 +366,7 @@ export default function ChatPage() {
                 <button
                   type="button"
                   onClick={handleApplyRescue}
-                  className="px-4 py-2 bg-[#00D26A] text-[#0D1315] hover:bg-emerald-400 rounded-lg font-semibold text-xs transition-all"
+                  className="px-4 py-2 bg-[#34D399] text-[#0B1220] hover:bg-[#34D399]/90 rounded-lg font-semibold text-xs transition-all"
                 >
                   Apply & Load Thread
                 </button>
